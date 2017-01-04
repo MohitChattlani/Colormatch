@@ -14,6 +14,10 @@ A fun, simple and relaxing game .
 
 ![gamecapture](https://cloud.githubusercontent.com/assets/19841485/21647125/08af7580-d2bf-11e6-932a-41090fd958f0.JPG)
 
+## Insructions
+
+![gameinstructions](https://cloud.githubusercontent.com/assets/19841485/21647290/a69d472c-d2bf-11e6-89f8-26279f9a1f9f.JPG)
+
 ## Built With
 
 * love
