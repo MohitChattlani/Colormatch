@@ -10,6 +10,10 @@ A fun, simple and relaxing game .
 * Easy
 * Relaxing
 
+## Screenshot 
+
+![gamecapture](https://cloud.githubusercontent.com/assets/19841485/21647125/08af7580-d2bf-11e6-932a-41090fd958f0.JPG)
+
 ## Built With
 
 * love
