@@ -1,4 +1,5 @@
 # Colormatch
+<img src="https://img.shields.io/badge/release-v1.0.0-brightgreen.svg" />
 <a href="https://twitter.com/chattlanimohit"><img src="https://img.shields.io/badge/twitter-%40Chattlanimohit-blue.svg" alt="twitter"/></a>
 <a href="https://github.com/MohitChattlani/Colormatch/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg" alt="license"/></a>
 
