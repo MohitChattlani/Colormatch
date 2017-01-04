@@ -5,7 +5,6 @@
   "version": "1.0.0",
 
   // Recommended
-  "default_locale": "en",
   "description": "A fun, simple and relaxing game ",
   "icons": {
     "16": "icons/16x16.png",
@@ -13,6 +12,7 @@
     "128": "icons/128x128.png"
   },
   "browser_action":{
+    "default_title": "Play the game",
     "default_icon": "icons/48x48.png",
     "default_popup": "Colormatch.html"
   },
