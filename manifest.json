@@ -1,10 +1,7 @@
 {
-  // Required
   "manifest_version": 2,
   "name": "Colormatch",
   "version": "1.0.0",
-
-  // Recommended
   "description": "A fun, simple and relaxing game ",
   "icons": {
     "16": "icons/16x16.png",
@@ -16,16 +13,16 @@
     "default_icon": "icons/48x48.png",
     "default_popup": "Colormatch.html"
   },
-  // Optional
   "author": "Mohit chattlani",
   "background": {
-    // Recommended
     "persistent": false
   },
-  "content_scripts": [ {
+  "content_scripts": [ 
+    {
       "matches": ["*://*/*"],
       "js": ["scripts/script.js"]
-    }],
+    }
+  ],
   "offline_enabled": true,
   "short_name": "Cmatch",
 }
