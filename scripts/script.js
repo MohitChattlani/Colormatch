@@ -1,6 +1,10 @@
 var canvas=document.getElementById('mycanvas');
 	//pen comes with canvas
 	var scoredis=document.getElementById('score');
+	var level0=document.getElementById('level0');
+	var level1=document.getElementById('level1');
+	var level2=document.getElementById('level2');
+	var level3=document.getElementById('level3');
 	var pen=canvas.getContext('2d');
 	function init()
 	{
@@ -14,7 +18,7 @@ var canvas=document.getElementById('mycanvas');
 			y: 275 ,
 			w: 10,
 			h: 10,
-			speedx : 5 ,
+			speedx : 2 ,
 			color: "yellow" ,
 			playing: false
 		};
@@ -22,7 +26,7 @@ var canvas=document.getElementById('mycanvas');
 			x:180 ,
 			y:0 ,
 			w:10 ,
-			speedy:5 ,
+			speedy:3 ,
 			color: "red" ,
 			h: 130
 		};
@@ -30,7 +34,7 @@ var canvas=document.getElementById('mycanvas');
 			x:360,
 			y:420,
 			w:10 ,
-			speedy:5 ,
+			speedy:3 ,
 			color: "green" ,
 			h: 130
 		};
@@ -38,7 +42,7 @@ var canvas=document.getElementById('mycanvas');
 			x: 540,
 			y:0 ,
 			w:10 ,
-			speedy:5 ,
+			speedy:3 ,
 			color: "blue" ,
 			h: 130
 		};
@@ -114,6 +118,44 @@ var canvas=document.getElementById('mycanvas');
 			scoredis.innerHTML="Game Over<br>Score:"+ score;
 			GAME_IS_RUNNING=false;
 		}
+		//level 0
+		level0.onclick=function(){
+			enemy1.speedy=5;
+			enemy2.speedy=5;
+			enemy3.speedy=5;
+			score=0;
+			player.speedx=5;
+			player.x=40;
+			console.log(enemy1.speedy);
+		};
+		//level 1 
+		level1.onclick=function(){
+			enemy1.speedy=10;
+			enemy2.speedy=5;
+			enemy3.speedy=10;
+			player.speedx=5;		
+			score=0;
+			player.x=40;
+			console.log(enemy1.speedy);
+		};
+		level2.onclick=function(){
+			enemy1.speedy=10;
+			enemy2.speedy=10;
+			enemy3.speedy=5;
+			player.speedx=5;
+			score=0;
+			player.x=40;
+			console.log(enemy1.speedy);
+		};
+		level3.onclick=function(){
+			enemy1.speedy=10;
+			enemy2.speedy=10;
+			enemy3.speedy=10;
+			player.speedx=10;
+			score=0;
+			player.x=40;
+			//player.speedx=7;
+		};
 	}
 	function iscolliding(r1,r2)
 	{
