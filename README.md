@@ -28,7 +28,7 @@ A fun, simple and relaxing game .
 
 ## How to run ?
 
- Download the project and run the html file .
+ Download the project and run the index.html file .
  
  Issues
 ==========
