@@ -95,14 +95,6 @@ var canvas=document.getElementById('mycanvas');
 			player.speedx=-player.speedx;
 			player.color=randomcolor();
 		}
-		if (player.x==GAME_WIDTH)
-		{
-			score=score-1;
-		}
-		if (player.x==0) 
-		{
-			score=score+1;
-		}
 		if (iscolliding(player,enemy1))
 		{
 			scoredis.innerHTML="Game Over<br>Score:"+ score;
@@ -154,7 +146,6 @@ var canvas=document.getElementById('mycanvas');
 			player.speedx=10;
 			score=0;
 			player.x=40;
-			//player.speedx=7;
 		};
 	}
 	function iscolliding(r1,r2)
@@ -164,9 +155,22 @@ var canvas=document.getElementById('mycanvas');
 		cond1= (X>r2.x && X<r2.x+20); // 2 times width
 		cond2= (Y>r2.y && Y<r2.y+140) || (r1.y>r2.y+r2.h && r1.y<r2.y); // height(enemy+player)
 		cond3=r1.color!=r2.color;
-		if (r2.x+r2.w==r1.x)
+		if (r1.speedx>0)
 		{
-			score=score+1;
+			if (r2.x+r2.w==r1.x)
+			{	
+				score=score+1;
+				scoredis.innerHTML="Score:"+ score;
+			}
+		}
+		//player coming from the reverse end
+		else if (r1.speedx<0)
+		{
+			if (r1.x+r1.w==r2.x)
+			{
+				score=score+1;
+				scoredis.innerHTML="Score:"+ score;
+			}
 		}
 		return cond1 && cond2 && cond3;
 	}
