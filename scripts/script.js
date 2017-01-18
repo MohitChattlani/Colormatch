@@ -9,6 +9,7 @@ var canvas=document.getElementById('mycanvas');
 	function init()
 	{
 		score=0;
+		pos=40;
 		colors={0:"red",1:"blue",2:"green",3:"yellow",4:"orange"};
 		GAME_WIDTH=700;
 		GAME_HEIGHT=550;
@@ -97,17 +98,17 @@ var canvas=document.getElementById('mycanvas');
 		}
 		if (iscolliding(player,enemy1))
 		{
-			scoredis.innerHTML="Game Over<br>Score:"+ score;
+			scoredis.innerHTML="<h3>Game Over</h3> Score:"+ score+"<br>Refresh to Play Again";
 			GAME_IS_RUNNING=false;
 		}
 		if (iscolliding(player,enemy2))
 		{
-			scoredis.innerHTML="Game Over<br>Score:"+ score;
+			scoredis.innerHTML="<h3>Game Over</h3> Score:"+ score+"<br>Refresh to Play Again";
 			GAME_IS_RUNNING=false;
 		}
 		if (iscolliding(player,enemy3))
 		{
-			scoredis.innerHTML="Game Over<br>Score:"+ score;
+			scoredis.innerHTML="<h3>Game Over</h3> Score:"+ score+"<br>Refresh to Play Again";
 			GAME_IS_RUNNING=false;
 		}
 		//level 0
@@ -115,9 +116,8 @@ var canvas=document.getElementById('mycanvas');
 			enemy1.speedy=5;
 			enemy2.speedy=5;
 			enemy3.speedy=5;
-			score=0;
 			player.speedx=5;
-			player.x=40;
+			restart();
 			console.log(enemy1.speedy);
 		};
 		//level 1 
@@ -125,9 +125,8 @@ var canvas=document.getElementById('mycanvas');
 			enemy1.speedy=10;
 			enemy2.speedy=5;
 			enemy3.speedy=10;
-			player.speedx=5;		
-			score=0;
-			player.x=40;
+			player.speedx=5;
+			restart();
 			console.log(enemy1.speedy);
 		};
 		level2.onclick=function(){
@@ -135,8 +134,7 @@ var canvas=document.getElementById('mycanvas');
 			enemy2.speedy=10;
 			enemy3.speedy=5;
 			player.speedx=5;
-			score=0;
-			player.x=40;
+			restart();
 			console.log(enemy1.speedy);
 		};
 		level3.onclick=function(){
@@ -144,8 +142,7 @@ var canvas=document.getElementById('mycanvas');
 			enemy2.speedy=10;
 			enemy3.speedy=10;
 			player.speedx=10;
-			score=0;
-			player.x=40;
+			restart();
 		};
 	}
 	function iscolliding(r1,r2)
@@ -157,8 +154,11 @@ var canvas=document.getElementById('mycanvas');
 		cond3=r1.color!=r2.color;
 		if (r1.speedx>0)
 		{
-			if (r2.x+r2.w==r1.x)
+			if (r2.x+r2.w==r1.x && r1.x!=pos)
 			{	
+				//noting the position of player when he crosses obstacle 
+				//so that it cannot be used again (score does not inc on same pos)
+				pos=r1.x;
 				score=score+1;
 				scoredis.innerHTML="Score:"+ score;
 			}
@@ -166,13 +166,20 @@ var canvas=document.getElementById('mycanvas');
 		//player coming from the reverse end
 		else if (r1.speedx<0)
 		{
-			if (r1.x+r1.w==r2.x)
+			if (r1.x+r1.w==r2.x && r1.x!=pos)
 			{
+				pos=r1.x;
 				score=score+1;
 				scoredis.innerHTML="Score:"+ score;
 			}
 		}
 		return cond1 && cond2 && cond3;
+	}
+	function restart()
+	{
+		score=0;
+		player.x=40;
+		scoredis.innerHTML="Score:"+ score;
 	}
 	function randomcolor()
 	{
