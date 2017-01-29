@@ -1,13 +1,15 @@
 #mycanvas
 {
 	border: black 3px solid;
+	background-image: url("background_wood.jpg");
 }
 .heading
 {
 	color: #0e5e8d ;
 	font-family: 'Arima Madurai', cursive;
 	letter-spacing: 0.0625em; 
-	font-size: 1.3em;
+	font-size: 2.3em;
+	font-weight: bold;
 }
 #score
 {
@@ -23,4 +25,11 @@ a
 p
 {
 	font-family: 'Arima Madurai', cursive;
+}
+
+body{
+	background-image: url("untitled.png");
+}
+.row{
+	color: rgb(153, 38, 0);
 }
