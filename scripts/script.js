@@ -17,8 +17,8 @@ var canvas=document.getElementById('mycanvas');
 		player={
 			x: 40 ,
 			y: 275 ,
-			w: 10,
-			h: 10,
+			w: 20,
+			h: 20,
 			speedx : 2 ,
 			color: "yellow" ,
 			playing: false
@@ -26,7 +26,7 @@ var canvas=document.getElementById('mycanvas');
 		enemy1={
 			x:180 ,
 			y:0 ,
-			w:10 ,
+			w:20 ,
 			speedy:3 ,
 			color: "red" ,
 			h: 130
@@ -34,7 +34,7 @@ var canvas=document.getElementById('mycanvas');
 		enemy2={
 			x:360,
 			y:420,
-			w:10 ,
+			w:20 ,
 			speedy:3 ,
 			color: "green" ,
 			h: 130
@@ -42,7 +42,7 @@ var canvas=document.getElementById('mycanvas');
 		enemy3={
 			x: 540,
 			y:0 ,
-			w:10 ,
+			w:20 ,
 			speedy:3 ,
 			color: "blue" ,
 			h: 130
