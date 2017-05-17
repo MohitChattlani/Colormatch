@@ -1,6 +1,8 @@
 #mycanvas
 {
 	border: black 3px solid;
+	background: url("../images/wood.jpg");
+	background-size: auto;
 }
 .heading
 {
